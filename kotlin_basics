@@ -4,6 +4,23 @@ when we have a function literal with exactly one parameter you don’t have to d
 but we can just use it. This makes a lot of the language constructs map, filter, etc easier 
 to use as we do not have to specify the name of the parameter (you can if you want to).
 
+fun main(args: Array<String>) {
+
+    val program  = Program()
+
+    program.reverseAndDisplay("Hello",{it.reversed()})
+}
+
+
+class Program {
+
+    fun reverseAndDisplay(str:String, myfunc:(String)->String) {
+
+        var result = myfunc(str)
+        
+        print(result)
+    }
+}
 
 https://kotlinlang.org/docs/reference/basic-syntax.html
 
